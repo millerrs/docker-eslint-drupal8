@@ -4,7 +4,7 @@ An ESLint image for Drupal 8.
 ## Usage
 
 ```bash
-docker run -it --rm /path/to/code:/app millerrs/eslint-drupal8
+docker run -it --rm -v /path/to/code:/app millerrs/eslint-drupal8
 ```
 
 ## Usage in Jenkins Pipeline

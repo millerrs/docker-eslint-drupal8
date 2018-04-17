@@ -9,8 +9,9 @@ RUN apk update && apk add --no-cache \
     | command sed 's/[\{\},]//g ; s/: /@/g' \
     | xargs npm install -g "$PKG@latest"
 
-# Make a copy of Drupal core's .eslintrc.json.
-RUN curl --silent --show-error -o ~/.eslintrc.json http://cgit.drupalcode.org/drupal/plain/core/.eslintrc.json
+ENV DRUPAL_VERSION 8.5.1
+
+RUN curl --silent --show-error -o ~/.eslintrc.json "http://cgit.drupalcode.org/drupal/plain/core/.eslintrc.json?id=${DRUPAL_VERSION}"
 
 WORKDIR /app
 

@@ -2,7 +2,7 @@ FROM node:alpine
 
 ENV PKG eslint-config-airbnb
 
-RUN apk update && apk add --no-cache \
+RUN apk add --no-cache \
     curl \
     && npm install -g eslint \
     && npm info "$PKG@latest" peerDependencies --json \

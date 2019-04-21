@@ -15,4 +15,6 @@ RUN curl --silent --show-error -o ~/.eslintrc.json "http://cgit.drupalcode.org/d
 
 WORKDIR /app
 
+USER node
+
 CMD ["eslint", "."]

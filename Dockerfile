@@ -5,6 +5,9 @@ ENV PKG eslint-config-airbnb
 RUN apk add --no-cache \
     curl \
     && npm install -g eslint \
+    	eslint-plugin-prettier \
+    	eslint-config-prettier \
+    	prettier \
     && npm info "$PKG@latest" peerDependencies --json \
     | command sed 's/[\{\},]//g ; s/: /@/g' \
     | xargs npm install -g "$PKG@latest"
